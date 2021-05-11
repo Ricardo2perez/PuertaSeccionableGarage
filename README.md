@@ -33,7 +33,7 @@ Pin  | Uso
 28 | ?
 
  Span <td colspan=2>triple| Micro Original | Descripción
--------------| -- |-------------- | -----------
+--------- | ----| -- |-------------- | -----------
 Pin | Denominación | Pin | Descripción
 --- | ------------ | --- | -------------
 5   | D2           |  5  | Módulo R.F.
