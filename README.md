@@ -32,8 +32,8 @@ Pin  | Uso
 27 | Xtal 2
 28 | ?
 
- Span <td colspan=2>triple| Micro Original | Descripción
---------- | ----| -- |-------------- | -----------
+ Arduino | Nano| Micro Original | Descripción
+--------- | ---- |-------------- | -----------
 Pin | Denominación | Pin | Descripción
 --- | ------------ | --- | -------------
 5   | D2           |  5  | Módulo R.F.
