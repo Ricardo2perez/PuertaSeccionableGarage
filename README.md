@@ -34,7 +34,6 @@ Pin  | Uso
 
 Arduino Nano | | Micro Original | Descripción
 -------------| -- |-------------- | -----------
-
 Pin | Denominacion | Pin | Descripción
 --- | ------------ | --- | -------------
 5   | D2           |  5  | Módulo R.F.
