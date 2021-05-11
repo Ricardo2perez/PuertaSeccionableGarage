@@ -1,4 +1,5 @@
 # PuertaSeccionableGarage
+proyecto para sustituir microcontrolador  en una placa que controla el motor de una puerta seccionable de garaje
 
 ## Patillaje Microprocesador original.
 Pin  | Uso 
@@ -53,3 +54,5 @@ A1           | 24  | Céllula Fotoeléctrica
 
 
 ![Arduino Nano](./arduino-nano-pins.png "Arduino Nano Patillaje")
+
+
