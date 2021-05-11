@@ -32,7 +32,7 @@ Pin  | Uso
 27 | Xtal 2
 28 | ?
 
-Arduino Nano| Micro Original | 
+Arduino Nano| Micro Original | Uso
 ----------- |-------------- | -----------
 Denominación | Pin | Descripción
 D2           |  5  | Módulo R.F.
