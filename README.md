@@ -32,7 +32,9 @@ Pin  | Uso
 27 | Xtal 2
 28 | ?
 
- Span <td colspan=2>Arduino Nano| Micro Original | Descripción
---------- | ---- |-------------- | -----------
-Pin | Denominación | Pin | Descripción
-5   | D2           |  5  | Módulo R.F.
+Arduino Nano| Micro Original | 
+----------- |-------------- | -----------
+Denominación | Pin | Descripción
+D2           |  5  | Módulo R.F.
+D3           |  10 | Led
+D4           | 11  | R.F.
