@@ -33,3 +33,7 @@ Pin  | Uso
 28 | ?
 
 Arduino Nano | Micro Original | Descripción
+____________ | ______________ | ___________
+Pin | Denominacion | Pin | Descripción
+____________ | ______________ | ___________
+5   | D2     |    5           | Módulo R.F.
