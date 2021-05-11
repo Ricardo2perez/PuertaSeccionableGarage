@@ -1,6 +1,6 @@
 # PuertaSeccionableGarage
 
-## Patillaje Microprocesador original
+## Patillaje Microprocesador original.
 Pin  | Uso 
 ------------ | -------------
 1 | N.C.
@@ -20,10 +20,10 @@ Pin  | Uso
 15 | N.C.
 16 | N.C.
 17 | N.C.
-18 | Bombilla Cortesía
+18 | Luz Cortesía
 19 | N.C.
-20 | K2
-21 | K1
+20 | K2 (Relé Motor)
+21 | K1 (Relé Motor)
 22 | N.C.
 23 | Sobresfuerzo Amp. Operac.
 24 | Célula Fotoeléctrica
@@ -32,12 +32,22 @@ Pin  | Uso
 27 | Xtal 2
 28 | ?
 
+## Conversión de patillaje original a Patillaje del Arduino Nano.
+
 Arduino Nano| Micro Original | Uso
 ----------- |-------------- | -----------
 Denominación | Pin | Descripción
 D2           |  5  | Módulo R.F.
 D3           |  10 | Led
-D4           | 11  | R.F.
+D4           | 11  | Pulsador CL
+D5           | 12  | Pulsador RF
+D6           | 13  | Pulsador O/C
+D7           | 18  | Luz Cortesía
+D8           | 20  | K2
+D9           | 21  | K1
+A0           | 23  | Sobresfuerzo Amp. Operac.
+A1           | 24  | Céllula Fotoeléctrica
 
 
-![Texto alternativo](./arduino-nano-pins.png "Título alternativo")
+
+![Arduino Nano](./arduino-nano-pins.png "Arduino Nano Patillaje")
