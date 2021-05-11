@@ -1,4 +1,6 @@
 # PuertaSeccionableGarage
-Micro Original | Arduino Nano
+Pin  | Uso 
 ------------ | -------------
-1 | N.C
+1 | N.C.
+2 | 5Vcc
+3 | N.C.
