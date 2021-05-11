@@ -29,4 +29,5 @@ Pin  | Uso
 26 | Xtal 1
 27 | Xtal 2
 28 | ?
- 
+
+Arduino Nano | Micro Original | Descripción
