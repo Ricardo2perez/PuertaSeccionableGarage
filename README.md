@@ -1,4 +1,6 @@
 # PuertaSeccionableGarage
+
+## Patillaje Microprocesador original
 Pin  | Uso 
 ------------ | -------------
 1 | N.C.
