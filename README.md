@@ -16,3 +16,17 @@ Pin  | Uso
 13 | Pulsador O/C
 14 | GND
 15 | N.C.
+16 | N.C.
+17 | N.C.
+18 | Bombilla Cortesía
+19 | N.C.
+20 | K2
+21 | K1
+22 | N.C.
+23 | Sobresfuerzo Amp. Operac.
+24 | Célula Fotoeléctrica
+25 | Resistencia 10k a GND ?
+26 | Xtal 1
+27 | Xtal 2
+28 | ?
+ 
