@@ -38,3 +38,6 @@ Denominación | Pin | Descripción
 D2           |  5  | Módulo R.F.
 D3           |  10 | Led
 D4           | 11  | R.F.
+
+
+![Texto alternativo](./arduino-nano-pins.png "Título alternativo")
