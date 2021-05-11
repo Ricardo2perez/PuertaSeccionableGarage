@@ -49,5 +49,7 @@ A0           | 23  | Sobresfuerzo Amp. Operac.
 A1           | 24  | Céllula Fotoeléctrica
 
 
+## Patillaje del Arduino Nano
+
 
 ![Arduino Nano](./arduino-nano-pins.png "Arduino Nano Patillaje")
