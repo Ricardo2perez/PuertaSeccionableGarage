@@ -55,4 +55,7 @@ A1           | 24  | Céllula Fotoeléctrica
 
 ![Arduino Nano](./arduino-nano-pins.png "Arduino Nano Patillaje")
 
+![Placa por el lado de componentes](./Placa_Componentes_Mod.jpg "Placa por lado de componentes")
+![Placa por el lado de las pistas](./Placa_Pistas.JPG "Placa por lado de las pistas")
+
 
