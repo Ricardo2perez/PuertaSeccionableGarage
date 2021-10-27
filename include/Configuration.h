@@ -1,4 +1,34 @@
 //Config.h
+// button set to use (analog input, digital input)
+#define BUTTONS_ANALOG
+//#define BUTTONS_DIGITAL
+
+// milliseconds after a button is considered as pressed
+#define BUTTON_MIN_PRESSED 30
+
+// milliseconds after a button is considered as long pressed
+#define BUTTON_LONG_PRESSED 1000
+
+// put to false to add movements to the program after its execution
+#define PROGRAM_RESET_ALWAYS true
+
+// store configuration and program within internal EEPROM
+#define USE_PERSISTENT_MEMORY false
+
+// memory capacity for program movements
+#define MOVE_LIMIT 100
+
+// milliseconds for the "pause" movement
+#define PAUSE_MOVE_MILLIS 1000
+
+// milliseconds delay before starting to move
+#define DELAY_BEFORE_GO 500
+
+// milliseconds to pause after every movement
+#define AFTER_MOVEMENT_PAUSE 0
+
+
+
 
 // ensure this library description is only included once
 #ifndef Config_h

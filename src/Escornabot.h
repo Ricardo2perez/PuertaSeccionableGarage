@@ -30,9 +30,12 @@ See LICENSE.txt for details
 #include <Arduino.h>
 #include "Configuration.h"
 #include "Enums.h"
-#include "ButtonSet.h"
+//#include "MoveList.h"
+//#include "Engine.h"
+//#include "ButtonSet.h"
 #include "EventManager.h"
 
+/*
 #if defined(ENGINE_TYPE_STEPPERS)
 
     #include "EngineSteppers.h"
@@ -53,7 +56,9 @@ See LICENSE.txt for details
     Engine* ENGINE = (Engine*) &ENGINE_INSTANCE;
 
 #endif
+*/
 
+/*
 #if defined(BUTTONS_DIGITAL)
 
     // digital button set
@@ -70,8 +75,27 @@ See LICENSE.txt for details
     ButtonSet* BUTTONS = (ButtonSet*) &BUTTONS_INSTANCE;
     #define USE_BUTTONS true
 
+#elif defined(BUTTONS_ANALOG)
 
+    // analog button set
+    #include "ButtonSetAnalog.h"
+    const ButtonSetAnalog::Config BS_CONFIG = {
+        pin_button_set: BS_ANALOG_PIN,
+        pullup: (BS_ANALOG_WIRES == 3 ? false : true),
+        value_button_up: BS_ANALOG_VALUE_UP,
+        value_button_right: BS_ANALOG_VALUE_RIGHT,
+        value_button_down: BS_ANALOG_VALUE_DOWN,
+        value_button_left: BS_ANALOG_VALUE_LEFT,
+        value_button_go: BS_ANALOG_VALUE_GO,
+        value_button_reset: BS_ANALOG_VALUE_RESET,
+    };
+    ButtonSetAnalog BUTTONS_INSTANCE (&BS_CONFIG);
+    ButtonSet* BUTTONS = (ButtonSet*) &BUTTONS_INSTANCE;
+    #define USE_BUTTONS true
 
+#endif // Button set
+*/
+/*
 #if defined(USE_BLUETOOTH)
 
     #ifndef BLUETOOTH_SERIAL
@@ -88,19 +112,21 @@ See LICENSE.txt for details
 
 #endif // Bluetooth
 
+*/
 
+/*
 #if USE_BUZZER
     #include "Buzzer.h"
     Buzzer BUZZER = Buzzer(BUZZER_PIN);
 #endif
-
-
+*/
+/*
 #if USE_SIMPLE_LED
     #include "SimpleLed.h"
     SimpleLed SIMPLE_LED = SimpleLed(SIMPLE_LED_PIN);
 #endif
-
-
+*/
+/*
 #if USE_KEYPAD_LEDS
     #include "KeypadLeds.h"
     const KeypadLeds::Config KEYPAD_LEDS_CONFIG = {
@@ -112,14 +138,18 @@ See LICENSE.txt for details
     };
     KeypadLeds KEYPAD_LEDS = KeypadLeds(&KEYPAD_LEDS_CONFIG);
 #endif
-
+*/
 ///// global vars
 
 // event manager
 EventManager EVENTS_INSTANCE;
 EventManager* EVENTS = &EVENTS_INSTANCE;
 
-
+/*
+// program
+MoveList PROGRAM_INSTANCE;
+MoveList* PROGRAM = &PROGRAM_INSTANCE;
+*/
 
 #endif // _ESCORNABOT_H
 

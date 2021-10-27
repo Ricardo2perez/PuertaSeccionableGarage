@@ -29,6 +29,7 @@ See LICENSE.txt for details
 
 void Bot::init()
 {
+/*
     // init engine
     ENGINE->init();
 
@@ -65,7 +66,7 @@ void Bot::init()
     #if USE_PERSISTENT_MEMORY
     PROGRAM->load();
     #endif
-
+*/
     EVENTS->add(this);
 }
 
@@ -75,7 +76,7 @@ void Bot::loop()
 {
     EVENTS->indicateTick(micros());
 
-    if (!ENGINE->isExecuting()) delay(10);
+//    if (!ENGINE->isExecuting()) delay(10);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -94,13 +95,13 @@ void Bot::buttonReleased(BUTTON button)
     #if USE_SIMPLE_LED
     SIMPLE_LED.setStatus(false);
     #endif
-
+/*
     if (ENGINE->isExecuting())
     {
         ENGINE->cancelExecution();
         return;
     }
-
+*/
     switch (button)
     {
         case BUTTON_UP:
@@ -124,7 +125,7 @@ void Bot::buttonReleased(BUTTON button)
             break;
 
         case BUTTON_RESET:
-            PROGRAM->clear();
+          //  PROGRAM->clear();
             break;
     }
 }
@@ -136,13 +137,13 @@ void Bot::buttonLongReleased(BUTTON button)
     #if USE_SIMPLE_LED
     SIMPLE_LED.setStatus(false);
     #endif
-
+/*
     if (ENGINE->isExecuting())
     {
         ENGINE->cancelExecution();
         return;
     }
-
+*/
     switch (button)
     {
         case BUTTON_RIGHT:
@@ -167,6 +168,7 @@ void Bot::buttonLongReleased(BUTTON button)
 
 void Bot::programFinished()
 {
+/*
     #if PROGRAM_RESET_ALWAYS
     PROGRAM->clear();
     #endif
@@ -185,21 +187,25 @@ void Bot::programFinished()
         KEYPAD_LEDS.setLed(BUTTON_LEFT, true);
         #endif
     }
+*/
 }
 
 //////////////////////////////////////////////////////////////////////
 
 void Bot::programAborted(uint8_t executed, uint8_t total)
 {
+  /*
     #if PROGRAM_RESET_ALWAYS
     PROGRAM->clear();
     #endif
+*/
 }
 
 //////////////////////////////////////////////////////////////////////
 
 void Bot::_go()
 {
+  /*
     // preloaded program
     if (PROGRAM->getMoveCount() == 0 && _total_programs == 0)
     {
@@ -220,12 +226,14 @@ void Bot::_go()
         ENGINE->execute(PROGRAM, AFTER_MOVEMENT_PAUSE, POV_ESCORNABOT);
         _total_programs++;
     }
+*/
 }
 
 //////////////////////////////////////////////////////////////////////
 
 void Bot::_storeMove(MOVE move)
 {
+  /*
     if (PROGRAM->getMoveCount() < MOVE_LIMIT)
     {
         PROGRAM->addMove(move);
@@ -235,6 +243,7 @@ void Bot::_storeMove(MOVE move)
         // memory is full
         _go();
     }
+  */
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -244,7 +253,7 @@ void Bot::_next_game_mode()
     // select the next game mode (2 modes currently available)
     ++_game_mode %= 2;
 
-    switch (_game_mode)
+    /* switch (_game_mode)
     {
         case GAME_MODE_GRID_90:
             PROGRAM->setTurnDegrees(90);
@@ -260,6 +269,7 @@ void Bot::_next_game_mode()
     }
 
     EVENTS->indicateGameModeSelected(_game_mode);
+*/
 }
 
 //////////////////////////////////////////////////////////////////////
