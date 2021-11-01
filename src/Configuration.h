@@ -31,11 +31,13 @@ See LICENSE.txt for details
 //////////////////////////////////////////////////////////////////////
 
 // engine to use
-#define ENGINE_TYPE_STEPPERS
+#define ENGINE
 
 // button set to use (analog input, digital input)
-#define BUTTONS_ANALOG
-//#define BUTTONS_DIGITAL
+#define BUTTONS_DIGITAL
+
+// outputs
+#define OUTPUTS
 
 // milliseconds after a button is considered as pressed
 #define BUTTON_MIN_PRESSED 30
@@ -49,9 +51,6 @@ See LICENSE.txt for details
 // store configuration and program within internal EEPROM
 #define USE_PERSISTENT_MEMORY false
 
-// memory capacity for program movements
-#define MOVE_LIMIT 100
-
 // milliseconds for the "pause" movement
 #define PAUSE_MOVE_MILLIS 1000
 
@@ -60,13 +59,6 @@ See LICENSE.txt for details
 
 // milliseconds to pause after every movement
 #define AFTER_MOVEMENT_PAUSE 0
-
-// point of view set when Vacalourabot is started
-#define POV_INITIAL    POV_ESCORNABOT
-
-// bluetooth serial
-#define USE_BLUETOOTH true
-#define BLUETOOTH_BAUDS 9600
 
 // buzzer
 #define USE_BUZZER true
@@ -77,39 +69,21 @@ See LICENSE.txt for details
 #define TONE_FREQ_DOWN 3520
 #define TONE_FREQ_LEFT 2217
 
+
 // simple led
 #define USE_SIMPLE_LED false
-#define SIMPLE_LED_PIN 13
-
-// keypad leds
-#define USE_KEYPAD_LEDS true
-#define KEYPAD_LED_PIN_UP A0
-#define KEYPAD_LED_PIN_RIGHT A3
-#define KEYPAD_LED_PIN_DOWN A2
-#define KEYPAD_LED_PIN_LEFT A1
-#define KEYPAD_LED_PIN_GO 13
+#define SIMPLE_LED_PIN 6
 
 
 //////////////////////////////////////////////////////////////////////
-///// Steppers engine setup
+///// Engine setup
 //////////////////////////////////////////////////////////////////////
 
-#ifdef ENGINE_TYPE_STEPPERS
+#ifdef ENGINE
 
-// stepper pin setup (digital outputs)
-#define STEPPERS_MOTOR_RIGHT_IN1 5
-#define STEPPERS_MOTOR_RIGHT_IN2 4
-#define STEPPERS_MOTOR_RIGHT_IN3 3
-#define STEPPERS_MOTOR_RIGHT_IN4 2
-#define STEPPERS_MOTOR_LEFT_IN1 9
-#define STEPPERS_MOTOR_LEFT_IN2 8
-#define STEPPERS_MOTOR_LEFT_IN3 7
-#define STEPPERS_MOTOR_LEFT_IN4 6
-
-// step calibration
-#define STEPPERS_STEPS_PER_SECOND 1000
-#define STEPPERS_LINE_STEPS 1738
-#define STEPPERS_TURN_STEPS 1024
+// Relay motor (digital outputs)
+#define MOTOR_OPEN 12
+#define MOTOR_CLOSE 11
 
 #endif
 
@@ -122,54 +96,24 @@ See LICENSE.txt for details
 #ifdef BUTTONS_DIGITAL
 
 // keypad pin setup (digital or analog inputs) (use 255 if key doesn't exist)
-#define BS_DIGITAL_UP A0
-#define BS_DIGITAL_RIGHT A1
-#define BS_DIGITAL_DOWN A2
-#define BS_DIGITAL_LEFT A3
-#define BS_DIGITAL_GO A4
-#define BS_DIGITAL_RESET 255
+#define BS_DIGITAL_OC 3
+#define BS_DIGITAL_MOD_RF 4
+#define BS_DIGITAL_CL 8
+#define BS_DIGITAL_PULS_RF 2
+#define BS_DIGITAL_OVERLOAD A0
+#define BS_DIGITAL_FOTOCEL 7
 
 #endif // BUTTONS_DIGITAL
 
 
+#ifdef OUTPUTS
 
-//////////////////////////////////////////////////////////////////////
-///// Button set analog
-//////////////////////////////////////////////////////////////////////
-
-#ifdef BUTTONS_ANALOG
-
-#define BS_ANALOG_WIRES 2
-//#define BS_ANALOG_WIRES 3
-
-// keypad pin setup (analog input)
-#define BS_ANALOG_PIN A7
-
-// input values for each key pressed (0 if key doesn't exist)
-#define BS_ANALOG_VALUE_UP 512
-#define BS_ANALOG_VALUE_RIGHT 860
-#define BS_ANALOG_VALUE_DOWN 769
-#define BS_ANALOG_VALUE_LEFT 683
-#define BS_ANALOG_VALUE_GO 810
-#define BS_ANALOG_VALUE_RESET 0
-
-#endif // BUTTONS_ANALOG
+// Relay motor (digital outputs)
+#define LED_STATUS 6
+#define LUZ_CORTESIA 13
 
 
-
-//////////////////////////////////////////////////////////////////////
-///// Button set Bluetooth
-//////////////////////////////////////////////////////////////////////
-
-#ifdef USE_BLUETOOTH
-
-// Arduino serial port (default is Serial, use Serial1 with Arduino Micro)
-//#define BLUETOOTH_SERIAL    Serial
-//#define BLUETOOTH_SERIAL    Serial1
-//#define BLUETOOTH_SERIAL    Serial2
-//#define BLUETOOTH_SERIAL    Serial3
-
-#endif // USE_BLUETOOTH
+#endif
 
 
 

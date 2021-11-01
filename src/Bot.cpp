@@ -104,27 +104,27 @@ void Bot::buttonReleased(BUTTON button)
 */
     switch (button)
     {
-        case BUTTON_UP:
-            _storeMove(MOVE_FORWARD);
+        case BUTTON_OC:
+          //  _storeMove(MOVE_FORWARD);
             break;
 
-        case BUTTON_RIGHT:
-            _storeMove(MOVE_RIGHT);
+        case BUTTON_MOD_RF:
+            //_storeMove(MOVE_RIGHT);
             break;
 
-        case BUTTON_DOWN:
-            _storeMove(MOVE_BACKWARD);
+        case BUTTON_CL:
+            //_storeMove(MOVE_BACKWARD);
             break;
 
-        case BUTTON_LEFT:
-            _storeMove(MOVE_LEFT);
+        case BUTTON_PUSH_RF:
+            //_storeMove(MOVE_LEFT);
             break;
 
-        case BUTTON_GO:
-            _go();
+        case BUTTON_OVERLOAD:
+            //_go();
             break;
 
-        case BUTTON_RESET:
+        case BUTTON_FOTOCEL:
           //  PROGRAM->clear();
             break;
     }
@@ -144,6 +144,7 @@ void Bot::buttonLongReleased(BUTTON button)
         return;
     }
 */
+/*
     switch (button)
     {
         case BUTTON_RIGHT:
@@ -162,6 +163,7 @@ void Bot::buttonLongReleased(BUTTON button)
             _next_game_mode();
             break;
     }
+  */
 }
 
 //////////////////////////////////////////////////////////////////////

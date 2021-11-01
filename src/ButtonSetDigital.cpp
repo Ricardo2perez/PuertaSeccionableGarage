@@ -39,12 +39,12 @@ void ButtonSetDigital::init()
     ButtonSet::init();
 
     // configure Arduino pins
-    pinMode(_config->pin_button_up, INPUT);
-    pinMode(_config->pin_button_right, INPUT);
-    pinMode(_config->pin_button_down, INPUT);
-    pinMode(_config->pin_button_left, INPUT);
-    pinMode(_config->pin_button_go, INPUT);
-    pinMode(_config->pin_button_reset, INPUT);
+    pinMode(_config->pin_button_oc, INPUT);
+    pinMode(_config->pin_button_mod_rf, INPUT);
+    pinMode(_config->pin_button_cl, INPUT);
+    pinMode(_config->pin_button_push_rf, INPUT);
+    pinMode(_config->pin_button_overload, INPUT);
+    pinMode(_config->pin_button_fotocel, INPUT);
 }
 
 
@@ -52,40 +52,40 @@ void ButtonSetDigital::scanButtons()
 {
     bool state;
 
-    state = (digitalRead(_config->pin_button_up) == HIGH);
-    if (state ^ isPressed(BUTTON_UP))
+    state = (digitalRead(_config->pin_button_oc) == HIGH);
+    if (state ^ isPressed(BUTTON_OC))
     {
-            if (state) pressed(BUTTON_UP); else released(BUTTON_UP);
+            if (state) pressed(BUTTON_OC); else released(BUTTON_OC);
     }
 
-    state = (digitalRead(_config->pin_button_right) == HIGH);
-    if (state ^ isPressed(BUTTON_RIGHT))
+    state = (digitalRead(_config->pin_button_mod_rf) == HIGH);
+    if (state ^ isPressed(BUTTON_MOD_RF))
     {
-            if (state) pressed(BUTTON_RIGHT); else released(BUTTON_RIGHT);
+            if (state) pressed(BUTTON_MOD_RF); else released(BUTTON_MOD_RF);
     }
 
-    state = (digitalRead(_config->pin_button_down) == HIGH);
-    if (state ^ isPressed(BUTTON_DOWN))
+    state = (digitalRead(_config->pin_button_cl) == HIGH);
+    if (state ^ isPressed(BUTTON_CL))
     {
-            if (state) pressed(BUTTON_DOWN); else released(BUTTON_DOWN);
+            if (state) pressed(BUTTON_CL); else released(BUTTON_CL);
     }
 
-    state = (digitalRead(_config->pin_button_left) == HIGH);
-    if (state ^ isPressed(BUTTON_LEFT))
+    state = (digitalRead(_config->pin_button_push_rf) == HIGH);
+    if (state ^ isPressed(BUTTON_PUSH_RF))
     {
-            if (state) pressed(BUTTON_LEFT); else released(BUTTON_LEFT);
+            if (state) pressed(BUTTON_PUSH_RF); else released(BUTTON_PUSH_RF);
     }
 
-    state = (digitalRead(_config->pin_button_go) == HIGH);
-    if (state ^ isPressed(BUTTON_GO))
+    state = (digitalRead(_config->pin_button_overload) == HIGH);
+    if (state ^ isPressed(BUTTON_OVERLOAD))
     {
-            if (state) pressed(BUTTON_GO); else released(BUTTON_GO);
+            if (state) pressed(BUTTON_OVERLOAD); else released(BUTTON_OVERLOAD);
     }
 
-    state = (digitalRead(_config->pin_button_reset) == HIGH);
-    if (state ^ isPressed(BUTTON_RESET))
+    state = (digitalRead(_config->pin_button_fotocel) == HIGH);
+    if (state ^ isPressed(BUTTON_FOTOCEL))
     {
-            if (state) pressed(BUTTON_RESET); else released(BUTTON_RESET);
+            if (state) pressed(BUTTON_FOTOCEL); else released(BUTTON_FOTOCEL);
     }
 }
 

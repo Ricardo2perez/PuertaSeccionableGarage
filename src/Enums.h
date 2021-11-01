@@ -34,14 +34,9 @@ See LICENSE.txt for details
 enum
 {
     MOVE_NONE = 0,
-    MOVE_FORWARD = 1,
-    MOVE_RIGHT = 2,
-    MOVE_BACKWARD = 3,
-    MOVE_LEFT = 4,
-    MOVE_PAUSE = 5,
-    MOVE_ALT_RIGHT = 6,
-    MOVE_ALT_LEFT = 7,
-};
+    MOVE_OPEN = 1,
+    MOVE_CLOSE = 2,
+  };
 typedef uint8_t MOVE;
 
 //////////////////////////////////////////////////////////////////////
@@ -62,12 +57,12 @@ typedef uint8_t POV;
 enum
 {
     BUTTON_NONE = 0,
-    BUTTON_UP = 1,
-    BUTTON_RIGHT = 2,
-    BUTTON_DOWN = 3,
-    BUTTON_LEFT = 4,
-    BUTTON_GO = 5,
-    BUTTON_RESET = 6,
+    BUTTON_OC = 1,
+    BUTTON_MOD_RF = 2,
+    BUTTON_CL = 3,
+    BUTTON_PUSH_RF = 4,
+    BUTTON_OVERLOAD = 5,
+    BUTTON_FOTOCEL = 6,
 };
 typedef uint8_t BUTTON;
 
