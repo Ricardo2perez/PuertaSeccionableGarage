@@ -95,7 +95,7 @@ See LICENSE.txt for details
 
 #ifdef BUTTONS_DIGITAL
 
-// keypad pin setup (digital or analog inputs) (use 255 if key doesn't exist)
+// Digital inputs in the Arduino
 #define BS_DIGITAL_OC 3
 #define BS_DIGITAL_MOD_RF 4
 #define BS_DIGITAL_CL 8
