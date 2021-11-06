@@ -35,19 +35,19 @@ Pin  | Uso
 
 ## Conversión de patillaje original a Patillaje del Arduino Nano.
 
-Arduino Nano| Micro Original | Uso
------------ |-------------- | -----------
-Denominación | Pin | Descripción
-D2           |  5  | Módulo R.F.
-D3           |  10 | Led
-D4           | 11  | Pulsador CL
-D5           | 12  | Pulsador RF
-D6           | 13  | Pulsador O/C
-D7           | 18  | Luz Cortesía
-D8           | 20  | K2
-D9           | 21  | K1
-A0           | 23  | Sobresfuerzo Amp. Operac.
-A1           | 24  | Céllula Fotoeléctrica
+Arduino Nano| Micro Original | Uso | Echidna Shield
+----------- |-------------- | ------------------ | ----------------
+Denominación | Pin | Descripción                 | Pin 
+D2           |  5  | Módulo R.F.                 | D4
+D3           |  10 | Led                         | D6
+D4           | 11  | Pulsador CL                 | D8 
+D5           | 12  | Pulsador RF                 | D2
+D6           | 13  | Pulsador O/C                | D3
+D7           | 18  | Luz Cortesía                | D13
+D8           | 20  | K2                          | D12
+D9           | 21  | K1                          | D11
+A0           | 23  | Sobresfuerzo Amp. Operac.   | A0 
+A1           | 24  | Céllula Fotoeléctrica       | D7
 
 
 ## Patillaje del Arduino Nano

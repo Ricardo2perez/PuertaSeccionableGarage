@@ -32,7 +32,7 @@ See LICENSE.txt for details
 #include "Enums.h"
 //#include "MoveList.h"
 //#include "Engine.h"
-//#include "ButtonSet.h"
+#include "ButtonSet.h"
 #include "EventManager.h"
 
 
