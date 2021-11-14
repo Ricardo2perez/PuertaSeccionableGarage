@@ -173,7 +173,7 @@ void EventManager::indicateButtonLongReleased(BUTTON button)
 }
 
 //////////////////////////////////////////////////////////////////////
-
+/*
 void EventManager::indicateGameModeSelected(GAME_MODE mode)
 {
     EventListener* i = _first;
@@ -183,7 +183,7 @@ void EventManager::indicateGameModeSelected(GAME_MODE mode)
         i = i->getNext();
     }
 }
-
+*/
 //////////////////////////////////////////////////////////////////////
 
 // EOF

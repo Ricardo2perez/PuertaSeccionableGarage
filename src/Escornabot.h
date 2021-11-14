@@ -30,14 +30,26 @@ See LICENSE.txt for details
 #include <Arduino.h>
 #include "Configuration.h"
 #include "Enums.h"
-//#include "MoveList.h"
-//#include "Engine.h"
+#include "MoveList.h"
+#include "Engine.h"
 #include "ButtonSet.h"
 #include "EventManager.h"
 
+#if defined(ENGINE_TYPE_STEPPERS)
+
+    #include "EngineSteppers.h"
+    const EngineSteppers::Config ENGINE_CONFIG = {
+        motor_open: PIN_MOTOR_OPEN,
+        motor_close: PIN_MOTOR_CLOSE,
+        steps_per_second: STEPPERS_STEPS_PER_SECOND,
+        line_steps: STEPPERS_LINE_STEPS,
+    };
+    EngineSteppers ENGINE_INSTANCE (&ENGINE_CONFIG);
+    Engine* ENGINE = (Engine*) &ENGINE_INSTANCE;
+
+#endif
 
 
-#if defined(BUTTONS_DIGITAL)
 
     // digital button set
     #include "ButtonSetDigital.h"
@@ -54,7 +66,7 @@ See LICENSE.txt for details
     #define USE_BUTTONS true
 
 
-#endif // Button set
+ // Button set
 
 /*
 #if defined(USE_BLUETOOTH)
@@ -81,12 +93,12 @@ See LICENSE.txt for details
     Buzzer BUZZER = Buzzer(BUZZER_PIN);
 #endif
 */
-/*
+
 #if USE_SIMPLE_LED
     #include "SimpleLed.h"
     SimpleLed SIMPLE_LED = SimpleLed(SIMPLE_LED_PIN);
 #endif
-*/
+
 /*
 #if USE_KEYPAD_LEDS
     #include "KeypadLeds.h"

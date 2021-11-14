@@ -29,9 +29,10 @@ See LICENSE.txt for details
 
 void Bot::init()
 {
-/*
+
     // init engine
     ENGINE->init();
+
 
     // init button set
     #if USE_BUTTONS
@@ -47,17 +48,17 @@ void Bot::init()
     #if USE_BLUETOOTH
     BLUETOOTH->init();
     #endif
-
+/*
     // init buzzer
     #if USE_BUZZER
     BUZZER.init();
     BUZZER.beep();
     #endif
-
+*/
     #if USE_SIMPLE_LED
     SIMPLE_LED.init();
     #endif
-
+/*
     #if USE_KEYPAD_LEDS
     KEYPAD_LEDS.init();
     #endif
@@ -76,13 +77,14 @@ void Bot::loop()
 {
     EVENTS->indicateTick(micros());
 
-//    if (!ENGINE->isExecuting()) delay(10);
+   if (!ENGINE->isExecuting()) delay(10);
 }
 
 //////////////////////////////////////////////////////////////////////
 
 void Bot::buttonPressed(BUTTON button)
 {
+   
     #if USE_SIMPLE_LED
     SIMPLE_LED.setStatus(true);
     #endif
@@ -106,25 +108,43 @@ void Bot::buttonReleased(BUTTON button)
     {
         case BUTTON_OC:
           //  _storeMove(MOVE_FORWARD);
+            #if DEBUG
+                Serial.println("Pulsado botón Abrir/cerrar");
+            #endif
             break;
 
         case BUTTON_MOD_RF:
+            #if DEBUG
+                Serial.println("Pulsado botón Mod_RF");
+            #endif
             //_storeMove(MOVE_RIGHT);
             break;
 
         case BUTTON_CL:
+            #if DEBUG
+                Serial.println("Pulsado botón CL");
+            #endif
             //_storeMove(MOVE_BACKWARD);
             break;
 
         case BUTTON_PUSH_RF:
+            #if DEBUG
+                Serial.println("Pulsado botón Push_RF");
+            #endif
             //_storeMove(MOVE_LEFT);
             break;
 
         case BUTTON_OVERLOAD:
+            #if DEBUG
+                Serial.println("Sobrecarga Activada");
+            #endif
             //_go();
             break;
 
         case BUTTON_FOTOCEL:
+            #if DEBUG
+                Serial.println("Activada Fotocelula");
+            #endif
           //  PROGRAM->clear();
             break;
     }
@@ -134,6 +154,9 @@ void Bot::buttonReleased(BUTTON button)
 
 void Bot::buttonLongReleased(BUTTON button)
 {
+
+    
+
     #if USE_SIMPLE_LED
     SIMPLE_LED.setStatus(false);
     #endif
@@ -144,6 +167,52 @@ void Bot::buttonLongReleased(BUTTON button)
         return;
     }
 */
+
+    switch (button)
+    {
+        case BUTTON_OC:
+          //  _storeMove(MOVE_FORWARD);
+            #if DEBUG
+                Serial.println("Soltado botón Abrir/cerrar");
+            #endif
+            break;
+
+        case BUTTON_MOD_RF:
+            #if DEBUG
+                Serial.println("Soltado botón Mod_RF");
+            #endif
+            //_storeMove(MOVE_RIGHT);
+            break;
+
+        case BUTTON_CL:
+            #if DEBUG
+                Serial.println("Soltado botón CL");
+            #endif
+            //_storeMove(MOVE_BACKWARD);
+            break;
+
+        case BUTTON_PUSH_RF:
+            #if DEBUG
+                Serial.println("Soltado botón Push_RF");
+            #endif
+            //_storeMove(MOVE_LEFT);
+            break;
+
+        case BUTTON_OVERLOAD:
+            #if DEBUG
+                Serial.println("Soltado Sobrecarga Activada");
+            #endif
+            //_go();
+            break;
+
+        case BUTTON_FOTOCEL:
+            #if DEBUG
+                Serial.println("Soltado Activada Fotocelula");
+            #endif
+          //  PROGRAM->clear();
+            break;
+    }
+    
 /*
     switch (button)
     {
@@ -207,28 +276,15 @@ void Bot::programAborted(uint8_t executed, uint8_t total)
 
 void Bot::_go()
 {
-  /*
-    // preloaded program
-    if (PROGRAM->getMoveCount() == 0 && _total_programs == 0)
-    {
-        PROGRAM->addProgram(PROGRAM_ESCORNA_GREETING);
-    }
+  
+    
+    int movement = MOVE(0);
+    
 
-    // only with movements
-    if (PROGRAM->getMoveCount() > 0)
-    {
-        #if USE_PERSISTENT_MEMORY
-        // save the movement program in EEPROM
-        PROGRAM->save();
-        #endif
+        ENGINE->execute(movement);
+        
+    
 
-        // let user to release the 'go' button before the action
-        delay(DELAY_BEFORE_GO);
-
-        ENGINE->execute(PROGRAM, AFTER_MOVEMENT_PAUSE, POV_ESCORNABOT);
-        _total_programs++;
-    }
-*/
 }
 
 //////////////////////////////////////////////////////////////////////

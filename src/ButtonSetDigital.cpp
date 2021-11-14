@@ -55,6 +55,7 @@ void ButtonSetDigital::scanButtons()
     state = (digitalRead(_config->pin_button_oc) == HIGH);
     if (state ^ isPressed(BUTTON_OC))
     {
+        
             if (state) pressed(BUTTON_OC); else released(BUTTON_OC);
     }
 

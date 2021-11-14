@@ -30,14 +30,20 @@ See LICENSE.txt for details
 ///// general configuration
 //////////////////////////////////////////////////////////////////////
 
-// engine to use
-#define ENGINE
+// activate debug
+#define DEBUG true
+//deactivate debug
+//#define DEBUG false
 
 // button set to use (analog input, digital input)
-#define BUTTONS_DIGITAL
+//#define BUTTONS_DIGITAL
+#define BUTTONS_ECHIDNA
 
-// outputs
-#define OUTPUTS
+
+// engine to use
+#define ENGINE_TYPE_STEPPERS
+
+
 
 // milliseconds after a button is considered as pressed
 #define BUTTON_MIN_PRESSED 30
@@ -71,21 +77,8 @@ See LICENSE.txt for details
 
 
 // simple led
-#define USE_SIMPLE_LED false
-#define SIMPLE_LED_PIN 6
-
-
-//////////////////////////////////////////////////////////////////////
-///// Engine setup
-//////////////////////////////////////////////////////////////////////
-
-#ifdef ENGINE
-
-// Relay motor (digital outputs)
-#define MOTOR_OPEN 12
-#define MOTOR_CLOSE 11
-
-#endif
+#define USE_SIMPLE_LED true
+#define SIMPLE_LED_PIN 13
 
 
 
@@ -96,19 +89,31 @@ See LICENSE.txt for details
 #ifdef BUTTONS_DIGITAL
 
 // Digital inputs in the Arduino
+#define BS_DIGITAL_OC 6
+#define BS_DIGITAL_MOD_RF 2
+#define BS_DIGITAL_CL 4
+#define BS_DIGITAL_PULS_RF 5
+#define BS_DIGITAL_OVERLOAD A0
+#define BS_DIGITAL_FOTOCEL A1
+#define PIN_MOTOR_OPEN 8
+#define PIN_MOTOR_CLOSE 9
+#define LED_STATUS 3
+#define LUZ_CORTESIA 7
+
+
+#endif // BUTTONS_DIGITAL
+
+#ifdef BUTTONS_ECHIDNA
+
+// Digital inputs in the Echidna Shield
 #define BS_DIGITAL_OC 3
 #define BS_DIGITAL_MOD_RF 4
 #define BS_DIGITAL_CL 8
 #define BS_DIGITAL_PULS_RF 2
 #define BS_DIGITAL_OVERLOAD A0
 #define BS_DIGITAL_FOTOCEL 7
-
-#endif // BUTTONS_DIGITAL
-
-
-#ifdef OUTPUTS
-
-// Relay motor (digital outputs)
+#define PIN_MOTOR_OPEN 12
+#define PIN_MOTOR_CLOSE 11
 #define LED_STATUS 6
 #define LUZ_CORTESIA 13
 
@@ -116,9 +121,14 @@ See LICENSE.txt for details
 #endif
 
 
-
-
 //////////////////////////////////////////////////////////////////////
+
+
+// step calibration
+#define STEPPERS_STEPS_PER_SECOND 1000
+#define STEPPERS_LINE_STEPS 1738
+
+
 //////////////////////////////////////////////////////////////////////
 
 

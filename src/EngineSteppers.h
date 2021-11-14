@@ -1,4 +1,4 @@
-// Bot.h
+// EngineSteppers.h
 /*
 
 Copyright (C) 2014-2019 Escornabot - http://escornabot.com
@@ -22,53 +22,53 @@ See LICENSE.txt for details
 
 */
 
-#ifndef _BOT_H
-#define _BOT_H
+#ifndef _ENGINE_STEPPERS_H
+#define _ENGINE_STEPPERS_H
 
+#include "Engine.h"
 #include "EventListener.h"
-#include "Enums.h"
 
 /**
- * \brief Object instance in order to register as an event listener.
+ * \brief Engine using 2 stepper motors controlled by an array of Darlington.
  * \author @caligari
  */
-class Bot : public EventListener
+class EngineSteppers : Engine, public EventListener
 {
 public:
 
+    typedef struct {
+        uint8_t motor_open;
+        uint8_t motor_close;
+        int16_t steps_per_second;
+        int16_t line_steps;
+        
+    } Config;
+
+    EngineSteppers(const Config* cfg);
+
     void init();
 
-    void loop();
+    void turn(int16_t degrees);
 
-    ////////////////////////////////////////////////////////////
-    // EventListener interface
-    ////////////////////////////////////////////////////////////
+    void moveStraight(float advance_units);
 
-    virtual void programFinished();
-
-    virtual void programAborted(uint8_t executed, uint8_t total);
-
-    virtual void buttonPressed(BUTTON button);
-
-    virtual void buttonReleased(BUTTON button);
-
-    virtual void buttonLongReleased(BUTTON button);
+    virtual void tick(uint32_t micros);
 
 private:
 
-    void _go();
+    const Config* _config;
 
-    void _storeMove(MOVE move);
+    void _motorStepOpen();
+    void _motorStepClose();
 
-    uint16_t _total_programs = 0;
+    int8_t _pattern_index_left;
+    int8_t _pattern_index_right;
 
-    GAME_MODE _game_mode = GAME_MODE_GRID_90;
-    STATE _state = CLOSE;
-
-    void _next_game_mode();
-
+    int16_t _movement_steps_o;
+    int16_t _movement_steps_c;
 };
 
-#endif // _BOT_H
+
+#endif // _ENGINE_STEPPERS_H
 
 // EOF
